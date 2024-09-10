@@ -1,0 +1,94 @@
+//class file
+public class libraryclass {
+
+	public static final String getTitle = null;
+	String booklist;
+	String memberlist;
+	
+	
+	public libraryclass(String booklist, String memberlist) {
+		
+		this.booklist = booklist;
+		this.memberlist = memberlist;
+	}
+	public String getBooklist() {
+        return booklist;
+    }
+
+    // Overriding the toString() method to return a string representation of the object
+    @Override
+    public String toString() {
+        return "Booklist: " + booklist + ", Memberlist: " + memberlist;
+    }
+
+	
+	void display() {
+		System.out.println("booklist:"+ booklist + "  "+"memberlist:"+ memberlist);
+		
+	}
+}
+//methods file
+
+import java.util.*;
+public class LibraryMnagement {
+		
+	
+	void displayDetails(libraryclass[] l) {
+		for(int i =0; i<l.length;i++) {
+			l[i].display();
+		}
+	}
+
+
+	public libraryclass[] CreateArray() {
+		
+		libraryclass[] l = new libraryclass[3];
+		l[0] = new libraryclass("love" , "Ariana");
+		l[1] = new libraryclass("ramayana" , "Valmiki");
+		l[2] = new libraryclass("mahabaratha" , "vysa");
+		
+		return l;
+		
+	}
+	public void search(libraryclass[] l , char k) {
+		
+		
+		boolean found = false;  
+
+	    for (int i = 0; i < l.length; i++) {
+	       
+	        if (l[i].booklist.charAt(0) == k) {  
+	            System.out.println(l[i]);   
+	            found = true;  
+	        }
+	    }
+
+	    if (!found) {
+	        System.out.println("not found");
+	    }
+		
+	}
+}
+//main  file
+import java.util.*;
+public class librarymain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LibraryMnagement lm = new LibraryMnagement();
+		
+		libraryclass[] l = lm.CreateArray();
+		
+		lm.displayDetails(l);
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("enter booklist name");
+		char name = s.next().charAt(0);
+		lm.search(l, name);
+		s.close();
+	}
+	
+	
+	}
+
+
