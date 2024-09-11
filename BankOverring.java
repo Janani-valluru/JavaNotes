@@ -1,4 +1,5 @@
-
+//Assignment 2 (polymorphism) 
+//Overriding 2
  class BankAccount {
 		
 		public void calculateInterest() {
