@@ -1,0 +1,122 @@
+//onlineCouse.java
+assignment 2   question 8
+public class OnlineCourse {
+	
+		int courseId;
+		String courseName;
+		String instructorName;
+		int fees;
+		
+		public OnlineCourse(int courseId, String courseName, String instructorName, int fees) {
+			
+			this.courseId = courseId;
+			this.courseName = courseName;
+			this.instructorName = instructorName;
+			this.fees = fees;
+		}
+		
+		public void display() {
+			// TODO Auto-generated method stub
+			System.out.println(courseId+courseName+instructorName+fees);
+			
+			
+		}
+}
+
+//OnlineManagement
+
+import java.util.Scanner;
+
+class onlineManagement {
+
+	
+	void displaydetails(OnlineCourse[] oc) {
+		for(int i=0;i<oc.length;i++) {
+			 if (oc[i] != null) {
+				 oc[i].display();
+			
+			 } 
+		}
+	}
+	
+	void enrollStudents(int n) {
+		int fees=5200;
+		int total = n*fees;
+		
+		System.out.println("the Revenue is :"+total);
+	}
+	
+	public OnlineCourse[] CreateArray() {
+		OnlineCourse[] oc = new OnlineCourse[10];
+		
+		Scanner s =new Scanner(System.in);
+		System.out.println("1.JAVA 2.SPRING 3. REACT ");
+		System.out.println("enter choice");
+		int ch = s.nextInt();
+		while(true) {
+		switch(ch) {
+			
+		case 1:
+			System.out.println("course ID: 1234");
+			System.out.println("course name: java");
+			System.out.println("course instructor name: james");
+			System.out.println("course fees: 5200");
+		
+			
+			System.out.print("enter no students enrolled  :");
+			Scanner sc = new Scanner(System.in);
+			int en = sc.nextInt();
+			enrollStudents(en);
+			break;
+			
+		case 2:
+			System.out.println("course ID: 9843");
+			System.out.println("course name: spring");
+			System.out.println("course instructor name: ross");
+			System.out.println("course fees: 5200");
+		
+			System.out.print("enter no students enrolled :");
+			Scanner scc = new Scanner(System.in);
+			int enn = scc.nextInt();
+			enrollStudents(enn);
+			break;
+		case 3:
+			System.out.println("course ID: 87");
+			System.out.println("course name: react");
+			System.out.println("course instructor name: mac");
+			System.out.println("course fees: 5200");
+			System.out.print("enter no students enrolled :");
+			Scanner sccc = new Scanner(System.in);
+			int ennc = sccc.nextInt();
+			enrollStudents(ennc);
+			break;
+		default:
+			System.out.println("invalid");
+		}
+		s.close();
+		return oc;
+		}
+}
+		
+}
+
+// OnlineCourseMain
+
+public class OnlineCourseMain {
+
+		// TODO Auto-generated method stub
+		
+			public static void main(String[] args) {
+				onlineManagement cm = new onlineManagement();
+				OnlineCourse[] oc =  cm.CreateArray();
+				 cm.displaydetails(oc);
+				 
+		}
+
+}
+
+
+
+	
+
+
