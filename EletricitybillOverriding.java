@@ -1,4 +1,5 @@
-
+//Assignment 2 (polymorphism) 
+//Overriding 3
 
 class ElectricityBill{
 	void calculateBill() {
