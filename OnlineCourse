@@ -25,6 +25,7 @@ public class OnlineCourse {
 
 //OnlineManagement
 
+
 import java.util.Scanner;
 
 class onlineManagement {
@@ -44,16 +45,19 @@ class onlineManagement {
 		int total = n*fees;
 		
 		System.out.println("the Revenue is :"+total);
+		System.out.println("     " );
 	}
 	
 	public OnlineCourse[] CreateArray() {
 		OnlineCourse[] oc = new OnlineCourse[10];
-		
 		Scanner s =new Scanner(System.in);
-		System.out.println("1.JAVA 2.SPRING 3. REACT ");
-		System.out.println("enter choice");
-		int ch = s.nextInt();
-		while(true) {
+		
+		while(true) { //don't close scanner or return because if these exits it wont go fo infinite loop
+			
+			System.out.println("1.JAVA 2.SPRING 3. REACT ");
+			System.out.println("enter choice :");
+			int ch = s.nextInt();
+			
 		switch(ch) {
 			
 		case 1:
@@ -64,8 +68,8 @@ class onlineManagement {
 		
 			
 			System.out.print("enter no students enrolled  :");
-			Scanner sc = new Scanner(System.in);
-			int en = sc.nextInt();
+			
+			int en = s.nextInt();
 			enrollStudents(en);
 			break;
 			
@@ -76,8 +80,8 @@ class onlineManagement {
 			System.out.println("course fees: 5200");
 		
 			System.out.print("enter no students enrolled :");
-			Scanner scc = new Scanner(System.in);
-			int enn = scc.nextInt();
+			
+			int enn = s.nextInt();
 			enrollStudents(enn);
 			break;
 		case 3:
@@ -86,19 +90,24 @@ class onlineManagement {
 			System.out.println("course instructor name: mac");
 			System.out.println("course fees: 5200");
 			System.out.print("enter no students enrolled :");
-			Scanner sccc = new Scanner(System.in);
-			int ennc = sccc.nextInt();
+			
+			int ennc = s.nextInt();
 			enrollStudents(ennc);
 			break;
+		case 4:
+            System.out.println("Exiting...");
+            s.close();
+            return oc;
 		default:
 			System.out.println("invalid");
-		}
-		s.close();
-		return oc;
-		}
+}
+}
+}
 }
 		
-}
+	
+
+
 
 // OnlineCourseMain
 
