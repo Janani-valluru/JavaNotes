@@ -1,4 +1,4 @@
-//QUESTION 3 STUDENT GRADING SYSYTEM
+//QUESTION 3 STUDENT GRADING SYSYTEM.
 import java.util.Scanner;
 
 class Student {
