@@ -19,19 +19,18 @@ class Institute{
 
 class School extends Institute{
 int noOfstudents;
+private int fees;
 	public School(String name, String location, int noOfstudents) {
 		super(name, location);
 		this.noOfstudents=noOfstudents;
 	}
 	
-	School[] createArray() {
-		Scanner sc= new Scanner(System.in);
-		for(int i =0; i<ca.length;i++) {
-			ca[i]= new School(int studentname)
-		}
-		
-	}
+	void studentcount(int d){
+		int fees=50000;
 	
+		int total = d*fees;
+		System.out.println(total);
+	}
 	void displayDetails() {
 		super.displayDetails();
 		System.out.println(noOfstudents);
@@ -80,20 +79,20 @@ public class educationInheritance {
 				int d = s.nextInt();
 				
 				School ca = new School( cname ,loc, d);
-				School ca = 
+				 
 				
 				ca.displayDetails();
-				ca.students();
+				ca.studentcount(d);
 				break;
 	case 2:
-			System.out.println("truck brand");
+			System.out.println("faculty name");
 			String t = s.next();
-			System.out.println("truck model");
+			System.out.println("designation");
 			String mo = s.next();
-			System.out.println("tons");
-			int tons = s.nextInt();
+			System.out.println("salary");
+			int sal = s.nextInt();
 			
-			College t1 = new College( t ,mo, tons);
+			College t1 = new College( t ,mo, sal);
 			t1.displayDetails();
 			t1.faculty();
 			break;
