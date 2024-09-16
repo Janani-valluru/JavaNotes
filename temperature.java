@@ -1,4 +1,4 @@
-//QUESTION 6 TEPERATURE CONVERSION
+//QUESTION 6 TEPERATURE CONVERSION..
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class temperature {
 
 	public static void main(String[] args) {
 		
-		 Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 	        System.out.print("Enter celcius: ");
 	        int a = sc.nextInt();
 	        temperature(a);
