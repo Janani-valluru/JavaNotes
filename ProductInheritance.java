@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 class Product {
     int productId;
@@ -53,16 +55,32 @@ class Clothing extends Product {
 public class ProductInheritance {
     public static void main(String[] args) {
        
-        Electronics electronics = new Electronics(101, "Laptop", 2);
+    	 List<Electronics> electronicsList = new ArrayList<>();
+         electronicsList.add(new Electronics(101, "Laptop", 2));
+         electronicsList.add(new Electronics(102, "Smartphone", 1));
+         electronicsList.add(new Electronics(103, "Television", 3));
+
+     
+         List<Clothing> clothingList = new ArrayList<>();
+         clothingList.add(new Clothing(201, "T-Shirt", "Medium"));
+         clothingList.add(new Clothing(202, "Jeans", "Large"));
+         clothingList.add(new Clothing(203, "Jacket", "Small"));
+
         
      
-        Clothing clothing = new Clothing(102, "T-Shirt", "Medium");
+         System.out.println("Electronics Products:");
+         for (int i = 0; i < electronicsList.size(); i++) {
+             Electronics electronics = electronicsList.get(i); 
+             electronics.displayProductInfo();
+             System.out.println();
+         }
 
+         System.out.println("Clothing Products:");
+         for (int i = 0; i < clothingList.size(); i++) {
+        	 Clothing  clothing = clothingList.get(i); 
+        	 clothing.displayProductInfo();
+             System.out.println(); 
+         }
         
-        System.out.println("Electronics Product Info:");
-        electronics.displayProductInfo();
-
-        System.out.println("\nClothing Product Info:");
-        clothing.displayProductInfo();
     }
 }
