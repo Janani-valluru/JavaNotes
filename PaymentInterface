@@ -1,0 +1,199 @@
+// class and method
+
+interface PaymentMethod
+{
+	boolean processPayment(double amount);
+	String getPaymentDetails();
+	 void refund(double amount);
+}
+
+
+class CreditCardPayment implements PaymentMethod{
+	String cardNumber;
+	String cardHolderName;
+	String expirationDate;
+	String cvv;
+	public CreditCardPayment(String cardNumber, String cardHolderName, String expirationDate, String cvv) {
+		super();
+		this.cardNumber = cardNumber;
+		this.cardHolderName = cardHolderName;
+		this.expirationDate = expirationDate;
+		this.cvv = cvv;
+	}
+
+	@Override
+	public boolean processPayment(double amount) {
+		
+		if(amount>0) {
+			System.out.println("the amount is processed"+ amount);
+		}
+		return true;
+	}
+
+	@Override
+	public String getPaymentDetails() {
+		
+		  //return "**** **** **** " + cardNumber.substring(cardNumber.length() - 4);
+		  return cardNumber;
+	}
+	
+	public void refund(double amount) {
+		
+		  if (amount > 1000) {
+              System.out.println("Refunded amount: " + amount);
+          } else {
+              System.out.println("Refund amount must be greater than 1000.");
+          }
+	}
+	
+}
+class PayPalPayment implements PaymentMethod{
+
+	
+	String email;
+	
+	public PayPalPayment(String email) {
+		super();
+		this.email = email;
+	}
+public boolean processPayment(String email) {
+		
+		if(email.matches(email)) {
+			System.out.println("email accepted");
+			return true;
+		}else {
+		return false;
+	}
+}
+
+@Override
+public boolean processPayment(double amount) {
+	
+	if(amount>0) {
+		System.out.println("the amount is processed"+ amount);
+	}
+	return true;
+}
+
+@Override
+public String getPaymentDetails() {
+	return "PayPal account: " + email;
+    
+}
+
+public void refund(double amount) {
+	
+	  if (amount > 1000) {
+          System.out.println("Refunded amount: " + amount);
+      } else {
+          System.out.println("Refund amount must be greater than 1000.");
+      }
+}
+
+void dispalypaypal() {
+	System.out.println();
+}
+}
+
+class BankTransferPayment implements PaymentMethod{
+	String bankAccountNumber;
+	String bankName;
+	
+	public BankTransferPayment(String bankAccountNumber, String bankName) {
+		super();
+		this.bankAccountNumber = bankAccountNumber;
+		this.bankName = bankName;
+	}
+
+
+	@Override
+	public boolean processPayment(double amount) {
+		
+		if(amount>0) {
+			System.out.println("the amount is processed"+ amount);
+		}
+		return true;
+	}
+
+	@Override
+	public String getPaymentDetails() {
+		//return "Bank Account: **** " + bankAccountNumber.substring(bankAccountNumber.length() - 4);
+		 return bankAccountNumber;
+	}
+	
+	public void refund(double amount) {
+		
+		  if (amount > 1000) {
+              System.out.println("Refunded amount: " + amount);
+          } else {
+              System.out.println("Refund amount must be greater than 1000.");
+          }
+	}
+	
+}
+
+
+// main 
+import java.util.Scanner;
+
+public class paymentInterface {
+	
+	public static void main(String[] args) {
+
+	Scanner s = new Scanner(System.in);
+	
+	while(true) {
+		System.out.println("Enter choice (1 for CreditCard, 2 for PayPal, 3 for BankTransfer, 0 to Exit):");
+		
+		int choice = s.nextInt();
+		switch(choice) {
+		
+		case 1 :
+			System.out.println("credit card details");
+			System.out.println("cardNumber");
+			String cardno = s.next();
+			System.out.println("cardHolderName");
+			String cardname = s.next();
+			System.out.println("expirationDate");
+			String expDate = s.next();
+			System.out.println("cvv");
+			String cvvv=s.next();
+			
+			CreditCardPayment cp = new CreditCardPayment( cardno,cardname , expDate, cvvv);
+			 System.out.println("Enter amount to process:");
+             double amount = s.nextDouble();
+             cp.processPayment(amount);
+            System.out.println(cp.getPaymentDetails());
+            cp.refund(1500);
+            break;
+		case 2 :
+			System.out.println("paypal details");
+			System.out.println("email id ");
+			String emailid=s.next();
+			
+			PayPalPayment pp = new PayPalPayment(emailid);
+			double a = s.nextDouble();
+			pp.processPayment(a);
+            System.out.println(pp.getPaymentDetails());
+            pp.refund(1200);
+            break;
+			
+		case 3:
+			System.out.println("BankTransferPayment");
+			System.out.println("cardNumber");
+			String cardno1 = s.next();
+			System.out.println("cardHolderName");
+			String cardname1 = s.next();
+			
+			BankTransferPayment btp = new BankTransferPayment(cardno1, cardname1);
+			double btpp = s.nextDouble();
+			btp.processPayment(btpp);
+			
+			
+             System.out.println(btp.getPaymentDetails());
+             btp.refund(2000);
+		}
+	}
+	
+	}	
+}
