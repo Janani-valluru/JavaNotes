@@ -13,7 +13,7 @@ public class DirectoryFile {
         String dirPath = sc.nextLine();
         listFilesInDirectory(dirPath);
 
-        // 2. Create a new directory
+        // 2. Create a new Directory
         System.out.println("Enter a name for the new directory:");
         String newDirName = sc.nextLine();
         Path newDir = createDirectory(dirPath, newDirName);
