@@ -103,6 +103,30 @@ class ProductManagement{
 	        System.out.println("Product with ID " + id + " not found.");
 	    }
 	}
+// 	public void updateProduct() {
+//     Scanner sc = new Scanner(System.in);
+//     System.out.println("Enter ID of product to update:");
+//     int id = sc.nextInt();
+
+//     boolean found = false;
+
+//     for (Product prod : products) {
+//         if (prod.getId() == id) {
+//             System.out.println("Enter new name:");
+//             prod.setName(sc.next());
+//             System.out.println("Enter new cost:");
+//             prod.setCost(sc.nextInt());
+//             System.out.println("Product updated successfully.");
+//             found = true;
+//             break;
+//         }
+//     }
+
+//     if (!found) {
+//         System.out.println("Product with ID " + id + " not found.");
+//     }
+// }
+
 }
 
 public class ShoppingArraylist {
