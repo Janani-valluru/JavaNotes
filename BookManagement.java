@@ -1,4 +1,4 @@
-//QUESTION 1 BOOK MANAGEMENT.
+//QUESTION 1 BOOK MANAGEMENT
 
 class Books {
     String title;
