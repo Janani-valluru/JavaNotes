@@ -24,6 +24,7 @@ public class EmployeeOveriding {
 			System.out.println("PartTimeEmployee:"+hoursWorked*hourRent);
 }
 		
+	
 	}
 
 	class Contract extends EmployeeOveriding{
